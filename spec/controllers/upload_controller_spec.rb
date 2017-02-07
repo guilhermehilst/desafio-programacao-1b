@@ -12,8 +12,11 @@ RSpec.describe UploadController, type: :controller do
     context 'when there is no file' do
       before { post :create }
       it 'redirect to root path' do
-        
         expect(response).to redirect_to(root_path)
+      end
+      it 'show a warning message' do
+        expect(flash[:alert]).to be_present
+        expect(flash[:alert]).to match("Please select a file to upload")
       end
     end
   end
