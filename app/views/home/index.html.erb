@@ -3,7 +3,7 @@
     <h1>Upload File .txt</h1>
     <hr>
     <div class="row">
-        <%= form_tag('/', method: :post, multipart: true) do %>
+        <%= form_tag(upload_path, method: :post, multipart: true) do %>
           <div class="col-md-4"> 
               <div class="form-group form-inline ">
                 <%= label_tag :file %>         

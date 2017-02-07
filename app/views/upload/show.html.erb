@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Parser Result</h1>
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>Buyer</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Amount</th>
+              <th>Address</th>
+              <th>Provider</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @sales.each do |sale| %>
+              <tr>
+                <td><%= sale['buyer'] %></td>
+                <td><%= sale['description'] %></td>
+                <td><%= sale['price'] %></td>
+                <td><%= sale['amount'] %></td>
+                <td><%= sale['address'] %></td>
+                <td><%= sale['provider'] %></td>    
+              </tr>
+            <% end %>
+            <tr><td colspan="6" class="text-right"><strong>Total: </strong><%= @total %></td></tr>
+          </tbody>    
+        </table>
+        <div class="pull-right">
+          <%= link_to "Upload New File", root_path, class: "btn btn-primary btn-sm btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
