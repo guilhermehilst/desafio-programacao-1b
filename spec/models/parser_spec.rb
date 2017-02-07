@@ -1,9 +1,9 @@
 RSpec.describe Parser, type: :model do
 
   describe '#parse_file' do
-    let(:parse){ FactoryGirl.build :parse }
+    let(:parser){ FactoryGirl.build :parser }
     before {
-      @sales, @total = parse.parse_file
+      @sales, @total = parser.parse_file
     }
 
     it { expect(@sales).to all(be_a(Sale)) }
