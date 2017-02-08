@@ -1,37 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="wrapper">
+  <div class="container">
+    <h1>
+      Listing Sales
+      <div class="pull-right">
+        <%= link_to "Upload New File", root_path, class: "btn btn-primary btn-sm btn-block" %>
+      </div>
+    </h1>
+    <hr>
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>Buyer</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Amount</th>
+              <th>Address</th>
+              <th>Provider</th>
+            </tr>
+          </thead>
 
-<h1>Listing Sales</h1>
+          <tbody>
+            <% @sales.each do |sale| %>
+              <tr>
+                <td><%= sale.buyer %></td>
+                <td><%= sale.description %></td>
+                <td><%= sale.price %></td>
+                <td><%= sale.amount %></td>
+                <td><%= sale.address %></td>
+                <td><%= sale.provider %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Buyer</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Amount</th>
-      <th>Address</th>
-      <th>Provider</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @sales.each do |sale| %>
-      <tr>
-        <td><%= sale.buyer %></td>
-        <td><%= sale.description %></td>
-        <td><%= sale.price %></td>
-        <td><%= sale.amount %></td>
-        <td><%= sale.address %></td>
-        <td><%= sale.provider %></td>
-        <td><%= link_to 'Show', sale %></td>
-        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Sale', new_sale_path %>
