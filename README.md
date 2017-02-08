@@ -9,7 +9,7 @@ Clone the repository
 git clone git@github.com:guilhermehilst/desafio-programacao-1b.git
 ```
 
-Enter the repository directory
+Enter the project directory
 ```
 cd desafio-programacao-1b
 ```
